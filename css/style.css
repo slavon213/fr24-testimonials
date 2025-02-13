@@ -1,4 +1,5 @@
 :root {
+    --bcgcolor: #ecf2f8;
     --moderate-violet: hsl(263, 55%, 52%);
     --very-dark-grayish-blue: hsl(217, 19%, 35%);
     --very-dark-blackish-blue: hsl(219, 29%, 14%);
@@ -6,38 +7,43 @@
     --light-gray: hsl(0, 0%, 81%);
     --lightlgrayishlblue: hsl(210, 46%, 95%);
 }
-html, body {
+html,
+body {
     height: 100%;
 }
 
 body {
+    background: var(--bcgcolor);
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 500;
     font-size: 13px;
+    /* line-height: 11px; */
+    color: #fff;
     display: grid;
     place-content: center;
-    
 }
 
 .container {
     margin-inline: auto;
     max-width: 1110px;
-    height: 572px;
-    border: 1px solid black;
+    max-height: 572px;
+    /* border: 1px solid black; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, minmax(282px, 1fr));
-    gap: 30px 24px;
-    
+    /* grid-template-rows: 282px 266px; */
+    grid-template-rows: minmax(260px, 282px) minmax(260px, 1fr);
+    gap: 24px 30px;
 }
 
-    
-
 article {
-    padding: 32px;
+    padding: 26px 32px 32px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
+    /* grid-template-rows: 828px 266px; */
 
     .user {
         margin-block-end: 18px;
@@ -57,20 +63,38 @@ article {
             grid-row: 1/3;
         }
 
+        .user__name {
+            line-height: 13px; /* 100% */
+        }
+
+        .user__status {
+            line-height: 11px;
+            color: inherit;
+            opacity: 0.5;
+        }
     }
 
     p {
         margin-block-end: 16px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    q {
+        line-height: 18px;
+        opacity: 0.7;
     }
 }
 
-
 .clifford {
+    background: var(--moderate-violet);
     grid-column: 1/3;
 }
 
 .walters {
     grid-column: 3;
+    background: var(--very-dark-grayish-blue);
 }
 .whittle {
     grid-column: 4;
@@ -83,7 +107,7 @@ article {
 }
 
 .abrams {
+    background: var(--very-dark-blackish-blue);
     grid-column: 2/4;
     grid-row: 2;
 }
-
